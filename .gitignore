@@ -1,0 +1,12 @@
+# Credenciales, historiales locales y volcados temporales
+.env
+.env.*
+secrets.*
+*.key
+*.pem
+*.pcap
+*.pcapng
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

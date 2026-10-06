@@ -1,0 +1,47 @@
+configure terminal
+hostname SW-DMZ
+no ip domain-lookup
+spanning-tree mode rapid-pvst
+vlan 30
+name DMZ
+vlan 999
+name NO_USADOS
+exit
+interface GigabitEthernet0/0
+description FORTIGATE_PORT2_DMZ
+switchport mode access
+switchport access vlan 30
+switchport nonegotiate
+no shutdown
+exit
+interface range GigabitEthernet0/1 - 3
+switchport mode access
+switchport access vlan 30
+switchport nonegotiate
+spanning-tree portfast
+spanning-tree bpduguard enable
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+no shutdown
+exit
+interface GigabitEthernet0/1
+description WEB_CAJA_ID5
+exit
+interface GigabitEthernet0/2
+description WEB_INVENTARIO_ID4
+exit
+interface GigabitEthernet0/3
+description DB_ID6
+exit
+interface range GigabitEthernet1/0 - 3
+switchport mode access
+switchport access vlan 999
+shutdown
+exit
+line vty 0 4
+transport input none
+exit
+end
+write memory

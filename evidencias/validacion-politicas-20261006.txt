@@ -1,0 +1,14 @@
+VLAN10-CAJA http://192.168.30.2/ HTTP=200 esperado=permitido
+VLAN10-INVENTARIO http://192.168.30.3/ HTTP=000 esperado=bloqueado
+VLAN20-CAJA http://192.168.30.2/ HTTP=200 esperado=permitido
+VLAN20-INVENTARIO http://192.168.30.3/ HTTP=200 esperado=permitido
+GUI-VLAN20 http://192.168.20.1/login HTTP=200 esperado=permitido
+
+SSH: VLAN10 debe fallar; VLAN20 debe responder.
+OK VLAN10 SSH caja bloqueado
+OK VLAN20 SSH caja permitido
+
+Prueba de ruta de gestion Docker desde VLAN10:
+OK interfaz de gestion bloqueada
+
+Persistencia del tunel RDP local en Windows:

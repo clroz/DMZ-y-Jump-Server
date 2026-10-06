@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker exec docker29 sh -c 'command -v mysqld || true; command -v mariadbd || true; command -v mysql || true; mysqld --version 2>&1 || true; dpkg-query -W -f="${Status} ${Version}\n" mysql-server mysql-server-core-8.0 2>/dev/null || true; service mysql status 2>&1 || true; ls -l /var/lib/mysql/*.pid 2>/dev/null; sed -n "1,100p" /etc/mysql/mysql.conf.d/mysqld.cnf; env | cut -d= -f1 | grep -Ei "mysql|maria|db_" | sort || true'

@@ -1,0 +1,43 @@
+
+execute log filter reset
+execute log filter reset
+
+
+FortiGate-VM64-KVM # 
+
+execute log filter device memory
+execute log filter device memory
+
+
+FortiGate-VM64-KVM # 
+
+execute log filter category 0
+execute log filter category 0
+
+
+FortiGate-VM64-KVM # 
+
+execute log filter field srcip 192.168.10.10
+execute log filter field srcip 192.168.10.10
+
+
+FortiGate-VM64-KVM # 
+
+execute log display
+execute log display
+
+5 logs found.
+5 logs returned.
+
+1: date=2026-10-06 time=16:53:01 eventtime=1791330782024329602 tz="-0700" logid="0000000013" type="traffic" subtype="forward" level="notice" vd="root" srcip=192.168.10.10 srcname="pnetlab" srcport=54224 srcintf="VLAN10" srcintfrole="lan" dstip=192.168.30.2 dstport=22 dstintf="port2" dstintfrole="dmz" srccountry="Reserved" dstcountry="Reserved" sessionid=862 proto=6 action="deny" policyid=12 policytype="policy" poluuid="f85b5282-c1e0-51f1-9802-3a86882f7a18" policyname="VLAN10-DENY-RESTO-DMZ" service="SSH" trandisp="noop" duration=0 sentbyte=0 rcvdbyte=0 sentpkt=0 rcvdpkt=0 appcat="unscanned" crscore=30 craction=131072 crlevel="high" osname="Linux" mastersrcmac="50:00:00:1e:00:01" srcmac="50:00:00:1e:00:01" srcserver=0
+
+2: date=2026-10-06 time=16:53:00 eventtime=1791330781012912305 tz="-0700" logid="0000000013" type="traffic" subtype="forward" level="notice" vd="root" srcip=192.168.10.10 srcname="pnetlab" srcport=54224 srcintf="VLAN10" srcintfrole="lan" dstip=192.168.30.2 dstport=22 dstintf="port2" dstintfrole="dmz" srccountry="Reserved" dstcountry="Reserved" sessionid=861 proto=6 action="deny" policyid=12 policytype="policy" poluuid="f85b5282-c1e0-51f1-9802-3a86882f7a18" policyname="VLAN10-DENY-RESTO-DMZ" service="SSH" trandisp="noop" duration=0 sentbyte=0 rcvdbyte=0 sentpkt=0 rcvdpkt=0 appcat="unscanned" crscore=30 craction=131072 crlevel="high" osname="Linux" mastersrcmac="50:00:00:1e:00:01" srcmac="50:00:00:1e:00:01" srcserver=0
+
+3: date=2026-10-06 time=16:52:58 eventtime=1791330778568889219 tz="-0700" logid="0000000013" type="traffic" subtype="forward" level="notice" vd="root" srcip=192.168.10.10 srcname="pnetlab" srcport=59208 srcintf="VLAN10" srcintfrole="lan" dstip=192.168.30.3 dstport=80 dstintf="port2" dstintfrole="dmz" srccountry="Reserved" dstcountry="Reserved" sessionid=856 proto=6 action="deny" policyid=10 policytype="policy" poluuid="f26039c4-c1e0-51f1-e393-91b07143dae7" policyname="VLAN10-BLOQUEA-INVENTARIO" service="HTTP" trandisp="noop" duration=0 sentbyte=0 rcvdbyte=0 sentpkt=0 rcvdpkt=0 appcat="unscanned" crscore=30 craction=131072 crlevel="high" osname="Linux" mastersrcmac="50:00:00:1e:00:01" srcmac="50:00:00:1e:00:01" srcserver=0
+
+4: date=2026-10-06 time=16:52:58 eventtime=1791330778480245780 tz="-0700" logid="0000000013" type="traffic" subtype="forward" level="notice" vd="root" srcip=192.168.10.10 srcname="pnetlab" srcport=55748 srcintf="VLAN10" srcintfrole="lan" dstip=192.168.30.2 dstport=80 dstintf="port2" dstintfrole="dmz" srccountry="Reserved" dstcountry="Reserved" sessionid=854 proto=6 action="close" policyid=11 policytype="policy" poluuid="f57c5b2e-c1e0-51f1-ebc3-d371b3b3f66f" policyname="VLAN10-CAJA-WEB" service="INFRA-WEB-80-443" trandisp="noop" duration=1 sentbyte=448 rcvdbyte=2185 sentpkt=7 rcvdpkt=5 appcat="unscanned" osname="Linux" mastersrcmac="50:00:00:1e:00:01" srcmac="50:00:00:1e:00:01" srcserver=0
+
+5: date=2026-10-06 time=16:52:57 eventtime=1791330777568000221 tz="-0700" logid="0000000013" type="traffic" subtype="forward" level="notice" vd="root" srcip=192.168.10.10 srcname="pnetlab" srcport=59208 srcintf="VLAN10" srcintfrole="lan" dstip=192.168.30.3 dstport=80 dstintf="port2" dstintfrole="dmz" srccountry="Reserved" dstcountry="Reserved" sessionid=855 proto=6 action="deny" policyid=10 policytype="policy" poluuid="f26039c4-c1e0-51f1-e393-91b07143dae7" policyname="VLAN10-BLOQUEA-INVENTARIO" service="HTTP" trandisp="noop" duration=0 sentbyte=0 rcvdbyte=0 sentpkt=0 rcvdpkt=0 appcat="unscanned" crscore=30 craction=131072 crlevel="high" osname="Linux" mastersrcmac="50:00:00:1e:00:01" srcmac="50:00:00:1e:00:01" srcserver=0
+
+
+FortiGate-VM64-KVM # 

@@ -1,0 +1,41 @@
+config system interface
+
+
+FortiGate-VM64-KVM (interface) # 
+edit port1
+
+
+FortiGate-VM64-KVM (port1) # 
+unset ip
+
+
+FortiGate-VM64-KVM (port1) # 
+set allowaccess ping
+
+
+FortiGate-VM64-KVM (port1) # 
+unset alias
+
+
+FortiGate-VM64-KVM (port1) # 
+next
+
+
+FortiGate-VM64-KVM (interface) # 
+end
+
+
+FortiGate-VM64-KVM # 
+show system interface port1
+
+config system interface
+    edit "port1"
+        set vdom "root"
+        set allowaccess ping
+        set type physical
+        set snmp-index 1
+    next
+end
+
+FortiGate-VM64-KVM # 
+GUI VLAN20 HTTP=200

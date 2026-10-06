@@ -1,0 +1,60 @@
+configure terminal
+hostname SW-USUARIOS
+no ip domain-lookup
+spanning-tree mode rapid-pvst
+vlan 10
+name USUARIOS
+vlan 20
+name ADMINISTRACION
+vlan 999
+name NO_USADOS
+exit
+interface GigabitEthernet0/0
+description TRUNK_FORTIGATE_PORT1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+switchport trunk allowed vlan 1,10,20
+switchport nonegotiate
+no shutdown
+exit
+interface GigabitEthernet0/1
+description PC7_VLAN10
+switchport mode access
+switchport access vlan 10
+switchport nonegotiate
+spanning-tree portfast
+spanning-tree bpduguard enable
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+no shutdown
+exit
+interface GigabitEthernet0/2
+description PC8_VLAN20
+switchport mode access
+switchport access vlan 20
+switchport nonegotiate
+spanning-tree portfast
+spanning-tree bpduguard enable
+switchport port-security
+switchport port-security maximum 1
+switchport port-security mac-address sticky
+switchport port-security violation restrict
+no shutdown
+exit
+interface GigabitEthernet0/3
+switchport mode access
+switchport access vlan 999
+shutdown
+exit
+interface range GigabitEthernet1/0 - 3
+switchport mode access
+switchport access vlan 999
+shutdown
+exit
+line vty 0 4
+transport input none
+exit
+end
+write memory
