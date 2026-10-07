@@ -1,0 +1,14 @@
+--- Crear/verificar base de demostración por socket local ---
+id	codigo	nombre	precio	existencia
+1	LAB-001	Producto de demostración	25.00	10
+--- Acceso TCP esperado desde servidores DMZ ---
+docker27 -> 192.168.30.4:3306 permitido
+docker28 -> 192.168.30.4:3306 permitido
+--- Bloqueo TCP esperado desde VLAN de usuarios ---
+docker30 -> 192.168.30.4:3306 bloqueado
+docker31 -> 192.168.30.4:3306 bloqueado
+--- Estado de servicio ---
+8.0.23-0ubuntu0.20.04.1	0.0.0.0	/usr/	/var/lib/mysql/	127.0.0.1	33060
+LISTEN  0        70             127.0.0.1:33060          0.0.0.0:*              
+LISTEN  0        128              0.0.0.0:3306           0.0.0.0:*              
+AppArmor efectivo: unconfined

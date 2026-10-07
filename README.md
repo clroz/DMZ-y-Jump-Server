@@ -56,9 +56,10 @@ Los scripts de red se ejecutan desde PNETLab, y `ejecutar-fase.cjs` lleva al hos
 ## Estado y limitaciones
 
 - VLAN, DHCP, DMZ y filtrado entre ambas redes están aplicados y comprobados.
-- El DB tiene paquetes MySQL instalados, pero `mysqld` no inicia: el perfil AppArmor del host deniega la lectura de bibliotecas desde la capa AUFS de este contenedor. El puerto 3306 no escucha y falta configurar la base de datos.
+- MySQL 8.0.23 está activo en `192.168.30.4:3306`. La base `infra1_demo` contiene la tabla `productos` y una fila de demostración; los dos servidores web alcanzan el puerto y PC7/PC8 quedan bloqueados por las políticas del FortiGate. MySQL X está limitado a loopback. La configuración está en [`configs/mysqld.cnf`](configs/mysqld.cnf); evidencia y consulta reproducible: [validacion-mysql-20261006.txt](evidencias/validacion-mysql-20261006.txt) y [`scripts/validar-mysql-infra1.sh`](scripts/validar-mysql-infra1.sh).
+- El perfil AppArmor `/usr/sbin/mysqld` del host bloquea la resolución de bibliotecas AUFS y AppArmor 2.12 no ofrece aquí el aislamiento de rutas desconectadas necesario para una excepción segura. Se restauró el perfil original. MySQL corre como `/usr/local/sbin/mysqld-infra1`, heredando `unconfined` del contenedor `docker29`; por tanto, conserva el aislamiento de red del contenedor/FortiGate, pero no el perfil AppArmor individual de mysqld. El arranque y la configuración están en [`scripts/configurar-mysql-infra1.sh`](scripts/configurar-mysql-infra1.sh). El usuario administrador solo se probó por socket local; todavía no se creó una cuenta remota para aplicaciones.
 - El laboratorio no tiene nube WAN. La política impide que la DMZ salga; por tanto, no se puede probar descarga de actualizaciones. No se habilitaron endpoints hasta definir la salida de Internet.
-- Las IPs, reglas de contenedor y páginas de esta sesión están en ejecución; su persistencia tras reiniciar los contenedores está pendiente.
+- La base de datos, IPs, reglas de contenedor y páginas de esta sesión están en ejecución; su persistencia y arranque automático tras reiniciar los contenedores están pendientes.
 - Falta grabar el vídeo y añadir capturas de la GUI. El repositorio local tiene un commit; la cuenta de GitHub aún no está autenticada para publicar el remoto.
 
 ### Acceso a PC7 desde VLAN 10

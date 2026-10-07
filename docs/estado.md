@@ -53,13 +53,17 @@ El usuario autorizo configurar FortiGate por CLI y demostrar por GUI.
   reinicio pendiente de configurar y verificar.
 - Scripts y comandos en scripts/ y configs/; evidencias en evidencias/.
 
+## Base de datos MySQL
+
+- MySQL 8.0.23 escucha en `192.168.30.4:3306`; `basedir=/usr`, `datadir=/var/lib/mysql`. MySQL X puerto 33060 está limitado a `127.0.0.1`. Configuración: [`mysqld.cnf`](../configs/mysqld.cnf).
+- La base `infra1_demo` contiene `productos` con una fila de prueba. Se valido consulta SQL local por socket.
+- Caja e Inventario alcanzan TCP 3306. PC7 (VLAN 10) y PC8 (VLAN 20) no alcanzan el puerto; el FortiGate mantiene sus denegaciones al resto de la DMZ.
+- El perfil del host `/usr/sbin/mysqld` bloquea bibliotecas AUFS. La regla de prueba se retiro y el perfil original se restauro. Como alternativa se ejecuta una copia en `/usr/local/sbin/mysqld-infra1`; el proceso tiene etiqueta AppArmor `unconfined`, igual que el contenedor `docker29`. Esto mantiene las restricciones de red del contenedor y FortiGate, pero no el perfil individual de AppArmor para el daemon MySQL.
+- Solo se validaron consultas locales con la cuenta administrativa por socket. No se creo cuenta remota para aplicaciones. El arranque automatico y la persistencia tras reiniciar el contenedor siguen pendientes; [`scripts/configurar-mysql-infra1.sh`](../scripts/configurar-mysql-infra1.sh) inicia el servicio sin duplicarlo.
+
 ## Pendientes
 
-Completar MySQL. `mysqld` esta instalado con datos previos, pero el perfil
-AppArmor `/usr/sbin/mysqld` del host deniega bibliotecas al resolver la
-ejecucion desde la capa AUFS del contenedor; no se ha relajado ese perfil.
-Persistir IP, iptables y paginas de los contenedores tras reinicio. Resolver salida de actualizaciones:
-sin conectividad externa no puede demostrarse acceso a endpoints de Internet.
+Persistir IP, iptables y paginas de los contenedores tras reinicio. Resolver salida de actualizaciones: sin conectividad externa no puede demostrarse acceso a endpoints de Internet.
 Agregar capturas de GUI y video. El repositorio local ya tiene commits; esta pendiente autenticarse en GitHub y publicar el remoto.
 
 Referencia de sintaxis:
