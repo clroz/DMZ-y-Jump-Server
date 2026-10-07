@@ -64,7 +64,7 @@ El usuario autorizo configurar FortiGate por CLI y demostrar por GUI.
 ## Pendientes
 
 Persistir IP, iptables y paginas de los contenedores tras reinicio. Resolver salida de actualizaciones: sin conectividad externa no puede demostrarse acceso a endpoints de Internet.
-El video demostrativo está en `evidencias/video-demostrativo.mp4`. Faltan capturas de GUI, configurar el remoto y publicar en GitHub.
+El video demostrativo está en `evidencias/video-demostrativo.mp4`. Las capturas de topología y GUI están en `evidencias/capturas/`; la galería está en [`evidencias.md`](evidencias.md). El repositorio de GitHub ya fue creado; falta publicar los commits locales.
 
 Referencia de sintaxis:
 https://docs.fortinet.com/document/fortigate/7.0.9/cli-reference/9620/config-system-interface

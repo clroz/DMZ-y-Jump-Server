@@ -6,4 +6,24 @@
 
 [`../configs/mysqld.cnf`](../configs/mysqld.cnf) es la configuración activa capturada del DB. Expone el protocolo clásico en 3306 y limita el puerto auxiliar MySQL X 33060 a loopback.
 
-Las capturas de GUI y el vídeo final se agregarán después de registrar la demostración desde los escritorios de PC7 y PC8. El README deja el vídeo al inicio como punto de entrada. Las salidas de CLI se complementarán con capturas legibles de la GUI al preparar la entrega.
+## Capturas de la GUI y topología
+
+Las imágenes siguientes documentan la topología en PNETLab, las interfaces, el DHCP y las políticas/logs en FortiGate. El video demostrativo está enlazado al inicio del [README](../README.md).
+
+### Topología
+
+![Topología activa en PNETLab](../evidencias/capturas/topologia-pnetlab.png)
+
+### Interfaces y DHCP
+
+![Interfaces de FortiGate](../evidencias/capturas/fortigate-interfaces.png)
+
+![Configuración DHCP de VLAN 10](../evidencias/capturas/fortigate-dhcp-vlan10.png)
+
+![Configuración DHCP de VLAN 20](../evidencias/capturas/fortigate-dhcp-vlan20.png)
+
+### Políticas y registro de denegación
+
+![Políticas de firewall de FortiGate](../evidencias/capturas/fortigate-politicas.png)
+
+![Registros de denegación hacia Inventario y tráfico permitido a Caja](../evidencias/capturas/fortigate-logs-denegacion.png)

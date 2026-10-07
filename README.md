@@ -44,6 +44,10 @@ La evidencia de tráfico de esta ejecución está en [log-denegacion-inventario-
 
 Ejecuta el túnel guardado en [`scripts/tunel-pc8.cjs`](scripts/tunel-pc8.cjs) desde Windows. Abre [`PC8.rdp`](PC8.rdp) con `mstsc` para conectar a `127.0.0.1:13389`. El equipo debe poder conectar al host PNETLab `192.168.22.132` por SSH. **No guardes las contraseñas de PNETLab ni del FortiGate en este repositorio.**
 
+## Capturas de la configuración
+
+La [galería de evidencias](docs/evidencias.md) incluye la topología y capturas de interfaces, DHCP, políticas y registros de FortiGate.
+
 ## Archivos
 
 - `configs/`: configuración de FortiGate y de los switches; archivos HTML de Caja e Inventario.
