@@ -31,8 +31,7 @@ El usuario autorizo configurar FortiGate por CLI y demostrar por GUI.
 - VLAN10: 192.168.10.1/25; PC7 recibio 192.168.10.10 por DHCP.
 - VLAN20: 192.168.20.1/25; PC8 recibio 192.168.20.10 por DHCP.
 - GUI actual: http://192.168.20.1 desde PC8, HTTP 200 comprobado.
-- La antigua URL 192.168.99.1 no responde desde VLAN20; port1 aun conserva
-  su direccion temporal, pendiente de limpiar al terminar la migracion.
+- La direccion temporal de port1 se retiro; ahora acepta solo ping sin etiqueta.
 - Switch2: SW-USUARIOS; Gi0/0 trunk 1,10,20; Gi0/1 VLAN10; Gi0/2 VLAN20.
 - Switch3: SW-DMZ; Gi0/0 a Gi0/3 en VLAN30.
 - DMZ: gateway 192.168.30.1/28; Caja .2, Inventario .3, DB .4.
@@ -43,7 +42,7 @@ El usuario autorizo configurar FortiGate por CLI y demostrar por GUI.
 - Evidencia FortiGate: Policy ID 10, srcip .10.10, dstip .30.3, action deny.
 - Trafico de los contenedores por eth0/10.177.0.0/16 bloqueado por iptables;
   PC8 conserva el tunel RDP recibido por el puerto 3389.
-- `running-configs-20261006.txt` exporta FortiGate y los dos switches;
+- PC7 dispone del tunel RDP local 127.0.0.1:13390 y PC8 usa 127.0.0.1:13389.`r`n- `running-configs-20261006.txt` exporta FortiGate y los dos switches;
   `switch-running-configs-20261006.txt` tiene el running-config IOS completo.
 - PortFast, BPDU Guard, port-security sticky y apagado de puertos libres
   aplicados; configuraciones de switches guardadas con write memory.
