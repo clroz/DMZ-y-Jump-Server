@@ -1,0 +1,4 @@
+Tunel PC8: 127.0.0.1:13389 -> 10.177.0.6:3389; negociacion RDP correcta.
+Tunel PC7: 127.0.0.1:13390 -> 10.177.0.5:3389; negociacion RDP correcta.
+El trafico RDP solo entra por TCP/3389 de Docker eth0. La demas gestion
+por esa interfaz sigue bloqueada.

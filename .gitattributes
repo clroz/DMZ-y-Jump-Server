@@ -1,0 +1,7 @@
+*.cjs text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.rdp text eol=crlf

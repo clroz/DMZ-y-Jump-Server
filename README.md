@@ -59,4 +59,10 @@ Los scripts de red se ejecutan desde PNETLab, y `ejecutar-fase.cjs` lleva al hos
 - El DB tiene paquetes MySQL instalados, pero `mysqld` no inicia: el perfil AppArmor del host deniega la lectura de bibliotecas desde la capa AUFS de este contenedor. El puerto 3306 no escucha y falta configurar la base de datos.
 - El laboratorio no tiene nube WAN. La política impide que la DMZ salga; por tanto, no se puede probar descarga de actualizaciones. No se habilitaron endpoints hasta definir la salida de Internet.
 - Las IPs, reglas de contenedor y páginas de esta sesión están en ejecución; su persistencia tras reiniciar los contenedores está pendiente.
-- Falta grabar el vídeo y añadir capturas de la GUI. No hay un repositorio remoto de GitHub todavía.
+- Falta grabar el vídeo y añadir capturas de la GUI. El repositorio local tiene un commit; la cuenta de GitHub aún no está autenticada para publicar el remoto.
+
+### Acceso a PC7 desde VLAN 10
+
+Abre [PC7.rdp](PC7.rdp) en Windows para conectar a 127.0.0.1:13390. Desde ese escritorio puedes mostrar el bloqueo de Inventario. La contraseña local del PC7 es admin. PC8 sigue disponible en [PC8.rdp](PC8.rdp), puerto 13389, con acceso a la GUI de FortiGate.
+
+Evidencia de ambos túneles: [acceso-rdp-20261006.txt](evidencias/acceso-rdp-20261006.txt).

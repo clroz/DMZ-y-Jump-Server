@@ -12,3 +12,5 @@ Toma las capturas mientras abres estas pantallas:
 7. Vuelve a PC8, demuestra que ambas páginas abren y conecta por SSH a `192.168.30.2`.
 
 Reemplaza cualquier captura de ejemplo con capturas de esta ejecución en `evidencias/capturas/`; elimina de las imágenes tokens, contraseñas y cualquier URL personal del navegador.
+
+Abre PC7.rdp para la demostracion desde VLAN 10; abre PC8.rdp para la GUI de FortiGate en VLAN 20.

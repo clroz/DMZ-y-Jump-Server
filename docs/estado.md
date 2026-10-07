@@ -65,3 +65,5 @@ como repositorio y publicarse en GitHub; no se ha confirmado acceso a la cuenta.
 
 Referencia de sintaxis:
 https://docs.fortinet.com/document/fortigate/7.0.9/cli-reference/9620/config-system-interface
+
+- PC7 dispone de tunel RDP local 127.0.0.1:13390 verificado; PC8 usa 127.0.0.1:13389.
