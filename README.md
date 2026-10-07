@@ -48,6 +48,10 @@ Ejecuta el túnel guardado en [`scripts/tunel-pc8.cjs`](scripts/tunel-pc8.cjs) d
 
 La [galería de evidencias](docs/evidencias.md) incluye la topología y capturas de interfaces, DHCP, políticas y registros de FortiGate.
 
+## Laboratorio PNETLab
+
+El archivo [`PNETLAB - LAB DMZ.zip`](PNETLAB%20-%20LAB%20DMZ.zip) contiene la topología importable `DMZ y Jump Server INFRA1.unl`. Para iniciar los nodos se requieren las imágenes FortiGate, IOSv2 y Docker indicadas por el laboratorio y disponibles en el entorno PNETLab.
+
 ## Archivos
 
 - `configs/`: configuración de FortiGate y de los switches; archivos HTML de Caja e Inventario.
