@@ -42,7 +42,8 @@ El usuario autorizo configurar FortiGate por CLI y demostrar por GUI.
 - Evidencia FortiGate: Policy ID 10, srcip .10.10, dstip .30.3, action deny.
 - Trafico de los contenedores por eth0/10.177.0.0/16 bloqueado por iptables;
   PC8 conserva el tunel RDP recibido por el puerto 3389.
-- PC7 dispone del tunel RDP local 127.0.0.1:13390 y PC8 usa 127.0.0.1:13389.`r`n- `running-configs-20261006.txt` exporta FortiGate y los dos switches;
+- PC7 dispone del tunel RDP local 127.0.0.1:13390 y PC8 usa 127.0.0.1:13389.
+- `running-configs-20261006.txt` exporta FortiGate y los dos switches;
   `switch-running-configs-20261006.txt` tiene el running-config IOS completo.
 - PortFast, BPDU Guard, port-security sticky y apagado de puertos libres
   aplicados; configuraciones de switches guardadas con write memory.
@@ -59,10 +60,8 @@ AppArmor `/usr/sbin/mysqld` del host deniega bibliotecas al resolver la
 ejecucion desde la capa AUFS del contenedor; no se ha relajado ese perfil.
 Persistir IP, iptables y paginas de los contenedores tras reinicio. Resolver salida de actualizaciones:
 sin conectividad externa no puede demostrarse acceso a endpoints de Internet.
-Agregar capturas de GUI y video. La carpeta local necesita inicializarse
-como repositorio y publicarse en GitHub; no se ha confirmado acceso a la cuenta.
+Agregar capturas de GUI y video. El repositorio local ya tiene commits; esta pendiente autenticarse en GitHub y publicar el remoto.
 
 Referencia de sintaxis:
 https://docs.fortinet.com/document/fortigate/7.0.9/cli-reference/9620/config-system-interface
 
-- PC7 dispone de tunel RDP local 127.0.0.1:13390 verificado; PC8 usa 127.0.0.1:13389.
