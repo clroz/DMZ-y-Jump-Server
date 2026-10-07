@@ -5,3 +5,4 @@
 *.svg text eol=lf
 *.txt text eol=lf
 *.rdp text eol=crlf
+*.mp4 filter=lfs diff=lfs merge=lfs -text
