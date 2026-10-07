@@ -1,4 +1,4 @@
-> **Vídeo demostrativo:** [ver/descargar la demostración](evidencias/video-demostrativo.mp4).
+> **Vídeo demostrativo:** [ver el video en OneDrive](https://1drv.ms/f/c/6b63aaec5c0ec7fc/IgDdeSxuWd94R5C7nNdUCZQvAdIvoNDLKzBBnHBkzgbbU1s?e=CedF9a).
 
 # DMZ y Jump Server · INFRA1
 
@@ -68,7 +68,7 @@ Los scripts de red se ejecutan desde PNETLab, y `ejecutar-fase.cjs` lleva al hos
 - El perfil AppArmor `/usr/sbin/mysqld` del host bloquea la resolución de bibliotecas AUFS y AppArmor 2.12 no ofrece aquí el aislamiento de rutas desconectadas necesario para una excepción segura. Se restauró el perfil original. MySQL corre como `/usr/local/sbin/mysqld-infra1`, heredando `unconfined` del contenedor `docker29`; por tanto, conserva el aislamiento de red del contenedor/FortiGate, pero no el perfil AppArmor individual de mysqld. El arranque y la configuración están en [`scripts/configurar-mysql-infra1.sh`](scripts/configurar-mysql-infra1.sh). El usuario administrador solo se probó por socket local; todavía no se creó una cuenta remota para aplicaciones.
 - El laboratorio no tiene nube WAN. La política impide que la DMZ salga; por tanto, no se puede probar descarga de actualizaciones. No se habilitaron endpoints hasta definir la salida de Internet.
 - La base de datos, IPs, reglas de contenedor y páginas de esta sesión están en ejecución; su persistencia y arranque automático tras reiniciar los contenedores están pendientes.
-- El vídeo demostrativo está en `evidencias/video-demostrativo.mp4`. Falta añadir capturas de la GUI. El repositorio local tiene commits; falta configurar el remoto y publicar en GitHub.
+- El video demostrativo se abre desde el vínculo compartido de OneDrive al inicio de este README. El repositorio incluye una copia en `evidencias/video-demostrativo.mp4`; las capturas y la galería están en `evidencias/capturas/` y [`docs/evidencias.md`](docs/evidencias.md).
 
 ### Acceso a PC7 desde VLAN 10
 

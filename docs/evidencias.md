@@ -8,7 +8,7 @@
 
 ## Capturas de la GUI y topología
 
-Las imágenes siguientes documentan la topología en PNETLab, las interfaces, el DHCP y las políticas/logs en FortiGate. El video demostrativo está enlazado al inicio del [README](../README.md).
+Las imágenes siguientes documentan la topología en PNETLab, las interfaces, el DHCP y las políticas/logs en FortiGate. El enlace al inicio del [README](../README.md) abre el video demostrativo en OneDrive.
 
 ### Topología
 
